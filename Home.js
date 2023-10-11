@@ -1,14 +1,14 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 
-export default function Screen1({navigation, colorPicker}) {
-
+export default function Screen1({navigation, route}) {
+  var curentColor = route.params?.curentColor || "blue";
   return (
     <View style={styles.container}>
       <View style={styles.imgContainer}>
         <Image
           style={styles.imgPhone}
-          source={require("./assets/vs_blue.png")}
+          source={require("./assets/vs_" + curentColor + ".png")}
         />
       </View>
       <View style={styles.decsription}>
@@ -132,3 +132,4 @@ const styles = StyleSheet.create({
        
     }
 });
+

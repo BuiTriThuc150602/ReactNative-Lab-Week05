@@ -26,7 +26,11 @@ export default function ChoeseColor({navigation}) {
                     <Pressable style = {[styles.color,styles.black]} onPress={()=>{setColorPicker("black")}}></Pressable>
                     <Pressable style = {[styles.color,styles.blue]} onPress={()=>{setColorPicker("blue")}}></Pressable>
                 </View>
-                <Pressable style = {styles.btnDone} onPress={()=>{navigation.goBack()}}>Xong</Pressable>
+                <Pressable style = {styles.btnDone} onPress={()=>{navigation.navigate({
+                    name : 'Home',
+                    params : {curentColor : colorPicker},
+                    merge : true,
+                })}}>Xong</Pressable>
             </View>
         </View>        
     )
